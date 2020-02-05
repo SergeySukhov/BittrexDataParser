@@ -147,6 +147,7 @@
   <ItemGroup>
     <Compile Include="BittrexCurrencyDbContext.cs" />
     <Compile Include="Currency.cs" />
+    <Compile Include="CurrencyProvider.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
