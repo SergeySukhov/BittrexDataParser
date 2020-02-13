@@ -20,9 +20,19 @@ namespace CurrencyCsvParser
             var bittrexCurrencyDbContext = new BittrexCurrencyDbContext();
 
             bittrexCurrencyDbContext.CurrencyDatas.AddRange(currencies.ToArray());
-            bittrexCurrencyDbContext.SaveChanges();
+			try
+			{
+				Console.WriteLine("Идет сохранение...");
+				bittrexCurrencyDbContext.SaveChanges();
+				Console.WriteLine("Сохранение завершено!");
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("!!", ex);
+			}
 
-            bittrexCurrencyDbContext.Dispose();
+
+			bittrexCurrencyDbContext.Dispose();
         }
 
         public void ClearBase()
